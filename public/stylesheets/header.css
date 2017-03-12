@@ -172,6 +172,7 @@ div#header div.utility ul.utilityNav li {
 div#header div.primaryNav ul.primaryNav {
     position: relative;
     display: block;
+    float: left;
     margin-right: -15px;
     margin-bottom: 0;
     padding: 0 0 0 15px;
