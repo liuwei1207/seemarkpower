@@ -31,30 +31,23 @@
    ========================================================================== */
 
 div#header {
-    position: fixed;
-    z-index: 11;
+    position: absolute;
+    z-index: 1000;
     top: 0;
     left: 0;
     width: 100%;
     height: 88px;
+    background-color: rgba(245, 245, 245, 1);
 }
 
 
 /* header > wrapper */
 
 div#header div.wrapper {
-    width: 760px;
+    width: 885px;
     height: 100%;
     margin: 0 auto;
-    padding: 0 15px 0 375px;
-    padding-left: 465px;
-    background: rgba(255, 255, 255, .95);
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlZmVmZSIgc3RvcC1vcGFjaXR5PSIwLjk1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjI0JSIgc3RvcC1jb2xvcj0iI2ZiZmJmYiIgc3RvcC1vcGFjaXR5PSIwLjk1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYmViZWIiIHN0b3Atb3BhY2l0eT0iMC45NSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top, rgba(254, 254, 254, .95) 0%, rgba(251, 251, 251, .95) 24%, rgba(235, 235, 235, .95) 100%);
-    background: -webkit-linear-gradient(top, rgba(254, 254, 254, .95) 0%, rgba(251, 251, 251, .95) 24%, rgba(235, 235, 235, .95) 100%);
-    background: -o-linear-gradient(top, rgba(254, 254, 254, .95) 0%, rgba(251, 251, 251, .95) 24%, rgba(235, 235, 235, .95) 100%);
-    background: -ms-linear-gradient(top, rgba(254, 254, 254, .95) 0%, rgba(251, 251, 251, .95) 24%, rgba(235, 235, 235, .95) 100%);
-    background: linear-gradient(to bottom, rgba(254, 254, 254, .95) 0%, rgba(251, 251, 251, .95) 24%, rgba(235, 235, 235, .95) 100%);
+    padding: 0 15px 0 240px;
 }
 
 
@@ -62,8 +55,8 @@ div#header div.wrapper {
 
 div#header > div > div.left {
     float: left;
-    width: 400px;
-    margin-left: -450px;
+    width: 240px;
+    margin-left: -240px;
     padding: 23px 0;
 }
 
@@ -89,26 +82,48 @@ div#header > div > div.right {
 }
 
 
+/* header > wrapper > right > c-right */
+
+div#header > div > div.right > .c-right {
+    float: right;
+}
+
+
 /* header > wrapper > right > search */
 
 div#header div.search {
-    position: relative;
-    float: right;
+    display: block;
     margin: -5px 0 0 15px;
+}
+
+div#header div.search .search {
+    color: #000;
 }
 
 
 /* header > wrapper > right > search > input */
 
 div#header div.search input#txtSearch {
-    width: 235px;
+    line-height: 22px;
+    width: 258px;
+    height: 32px;
+    padding: 5px;
+    border: 0 none;
 }
 
 
 /* header > wrapper > right > utility */
 
 div#header div.utility {
+    font-size: 12px;
+    display: block;
+    display: inline-block;
     float: right;
+    min-height: 30px;
+    padding-top: 3px;
+    padding-right: 75px;
+    vertical-align: middle;
+    background: url(../img/bg-map.png) no-repeat right top;
 }
 
 
@@ -124,7 +139,7 @@ div#header div.utility ul.utilityNav {
 div#header div.utility ul.utilityNav a,
 div.utility a.language {
     cursor: pointer;
-    color: #54575b;
+    color: #b3b3b3;
 }
 
 
@@ -136,11 +151,15 @@ div#header div.utility a.language {
     padding: 0 0 0 0;
     cursor: pointer;
     text-decoration: none;
-    color: #54575b;
+    color: #555;
 }
 
 
 /* header > wrapper > right > utility > utilityNav > li */
+
+div#header div.primaryNav {
+    margin-top: 15px;
+}
 
 div#header div.utility ul.utilityNav li {
     float: left;
@@ -152,12 +171,10 @@ div#header div.utility ul.utilityNav li {
 
 div#header div.primaryNav ul.primaryNav {
     position: relative;
-    bottom: -15px;
     display: block;
-    float: right;
     margin-right: -15px;
     margin-bottom: 0;
-    padding: 0;
+    padding: 0 0 0 15px;
     list-style: none;
 }
 
@@ -169,12 +186,31 @@ div#header div.primaryNav ul.primaryNav > li {
 div#header div.primaryNav ul.primaryNav > li > a {
     font-family: Arial, Sans-Serif;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: normal;
+    line-height: 36px;
     display: block;
-    padding: 5px 15px 9px 15px;
+    height: 36px;
+    padding: 0 15px 0 15px;
     cursor: pointer;
+    text-align: center;
     text-decoration: none;
-    color: #009cde;
+    color: #000;
+}
+
+div#header div.primaryNav ul.primaryNav > li:hover {
+    -webkit-transition: background .8s;
+    /* Safari 和 Chrome */
+    -moz-transition: background .8s;
+    /* Firefox 4 */
+    -o-transition: background .8s;
+    /* Opera */
+    transition: background .8s;
+    color: #fff;
+    background: #ff4200;
+}
+
+div#header div.primaryNav ul.primaryNav > li:hover > a {
+    color: #fff;
 }
 
 
@@ -184,20 +220,46 @@ div#header div.primaryNav div.dropdown {
     display: none;
 }
 
+div#header div.primaryNav div.dropdown.about {
+    width: 570px;
+}
+
+div#header div.primaryNav div.dropdown.product {
+    width: 1020px;
+}
+
+div#header div.primaryNav div.dropdown.technology {
+    width: 1020px;
+}
+
 div#header div.primaryNav ul.primaryNav > li:hover div.dropdown,
 div.primaryNav ul.primaryNav > li.hover div.dropdown {
     font-size: 13px;
     position: absolute;
-    z-index: 1;
-    top: 32px;
-    right: 0;
+    z-index: 1000;
+    top: 36px;
+    left: -244px;
     display: block;
     box-sizing: border-box;
-    width: 990px;
     padding: 25px;
-    border-top: solid 3px #009cde;
-    background: linear-gradient(60deg, #f4f5f4 0%, #e9e9e9 42%, #e9e9e9 100%, #f0f0f0 100%);
+    border-top: solid 3px #ff4200;
+    background: #fff;
     box-shadow: 0 -3px 10px rgba(0, 0, 0, .4);
+}
+
+div#header div.primaryNav ul.primaryNav > li div.mask {
+    position: fixed;
+    z-index: 999;
+    top: 88px;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+}
+
+div#header div.primaryNav ul.primaryNav > li:hover div.mask {
+    display: block;
 }
 
 div#header div.primaryNav div.dropdown > div > div.left {
@@ -205,6 +267,12 @@ div#header div.primaryNav div.dropdown > div > div.left {
     float: left;
     width: 330px;
     margin: 0 40px 0 0;
+}
+
+div#header div.primaryNav div.dropdown > div > div.left img {
+    display: block;
+    width: 330px;
+    height: 220px;
 }
 
 div#header div.primaryNav div.dropdown p.overview {
@@ -270,7 +338,7 @@ div#header div.primaryNav div.dropdown div.column ul > li {
 div#header div.primaryNav div.dropdown div.column ul > li a {
     cursor: pointer;
     text-decoration: none;
-    color: #009cde;
+    color: #b70005;
 }
 
 div#header div.primaryNav div.dropdown div.column ul > li a:hover {
@@ -293,7 +361,7 @@ div#header div.primaryNav div.dropdown ul.calls-to-action > li {
 div#header div.primaryNav div.dropdown ul.calls-to-action > li a {
     cursor: pointer;
     text-decoration: none;
-    color: #009cde;
+    color: #b70005;
 }
 
 div#header div.primaryNav div.dropdown ul.calls-to-action > li img {
@@ -314,14 +382,14 @@ div#header div.primaryNav div.dropdown ul.calls-to-action > li div.content h3 {
     font-size: 18px;
     font-weight: 600;
     line-height: 1.25;
-    color: #54575b;
     margin: 0;
+    color: #54575b;
 }
 
 div#header div.primaryNav div.dropdown ul.calls-to-action > li div.content a {
     cursor: pointer;
     text-decoration: none;
-    color: #009cde;
+    color: #b70005;
 }
 
 div#header div.primaryNav div.dropdown ul.calls-to-action > li div.content a:hover {
@@ -331,4 +399,107 @@ div#header div.primaryNav div.dropdown ul.calls-to-action > li div.content a:hov
 div#header div.primaryNav div.dropdown ul.calls-to-action > li div.content:last-child {
     margin: 0 0 20px 0;
     margin-bottom: 0;
+}
+
+.navSub {
+    width: 100%;
+}
+
+.navSub .navimg {
+    float: right;
+    width: 335px;
+}
+
+.navSub .navimg p {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.navSub .navimg img {
+    width: 335px;
+    height: 208px;
+}
+
+.navSub dl {
+    line-height: 1.3;
+    position: relative;
+    z-index: 997;
+    float: left;
+    width: 135px;
+}
+
+.navSub:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 175px;
+    content: '';
+    background: #ededed;
+}
+
+.navSub dl a {
+    display: block;
+    color: #555;
+}
+
+.navSub dt {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ccc;
+}
+
+.navSub dd {
+    font-size: 15px;
+    margin-bottom: 8px;
+    margin-left: 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ccc;
+}
+
+.navSub5 .justify:before,
+.navSub5 dl:first-child:before,
+.navSub5 dl:first-child:after {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    content: '';
+    background: #ddd;
+}
+
+.navSub dl a,
+.navSub5 dd a {
+    text-decoration: none;
+    color: #555;
+}
+
+.navSub dl a:hover,
+.navSub5 dd a:hover {
+    color: #ff4200;
+}
+
+
+/* .navSub dt a:before , .navSub dd a:before{ content:'\e650'; padding-right: 5px; font-family: icomoon; font-size: 14px;} */
+
+.navSub5 {
+    width: 980px;
+}
+
+.navSub5 dl {
+    margin-left: 25px;
+}
+
+.navSub5 dl:first-child {
+    margin-left: 0;
+}
+
+.subGray {
+    float: left;
+}
+
+.navSub.navSub5:before {
+    width: 655px;
 }
