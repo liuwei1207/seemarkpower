@@ -185,7 +185,7 @@ div#header div.primaryNav ul.primaryNav > li {
 }
 
 div#header div.primaryNav ul.primaryNav > li > a {
-    font-family: Arial, Sans-Serif;
+    font-family: "Microsoft YaHei";
     font-size: 16px;
     font-weight: normal;
     line-height: 36px;
@@ -195,7 +195,7 @@ div#header div.primaryNav ul.primaryNav > li > a {
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    color: #000;
+    color: #666;
 }
 
 div#header div.primaryNav ul.primaryNav > li:hover {
